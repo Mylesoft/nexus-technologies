@@ -1,0 +1,323 @@
+/* ===== CSS VARIABLES — Your Color Palette ===== */
+/* Why variables? So you only change a color in ONE place and it updates everywhere */
+:root {
+    --color-dark: #0a0a0f;       /* Deep black — background */
+    --color-primary: #00c8ff;    /* Electric cyan — main accent */
+    --color-secondary: #f5a623;  /* Amber gold — highlights */
+    --color-surface: #12121a;    /* Slightly lighter dark — cards */
+    --color-text: #e0e0e0;       /* Light grey — body text */
+    --color-text-muted: #888;    /* Dimmer text for subtitles */
+    --font-heading: 'Georgia', serif;
+    --font-body: 'Trebuchet MS', sans-serif;
+}
+
+/* ===== RESET — Why? Browsers add their own margin/padding by default. We remove it. ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Makes sizing predictable — padding doesn't add to width */
+}
+
+body {
+    background-color: var(--color-dark);
+    color: var(--color-text);
+    font-family: var(--font-body);
+    line-height: 1.7;
+}
+
+/* ===== NAVBAR — Uses FLEXBOX ===== */
+/* Why Flexbox here? We need logo on the left, links on the right — classic row layout */
+.navbar {
+    display: flex;
+    justify-content: space-between;  /* Pushes logo left, links right */
+    align-items: center;             /* Vertically centers them */
+    padding: 1.2rem 5%;
+    background-color: var(--color-surface);
+    border-bottom: 2px solid var(--color-primary);
+    position: sticky;  /* Stays at top when you scroll */
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    color: var(--color-primary);
+    letter-spacing: 1px;
+}
+
+.nav-links {
+    display: flex;         /* Links sit side by side */
+    gap: 2rem;             /* Space between each link */
+    list-style: none;      /* Removes the bullet points from <ul> */
+}
+
+.nav-links a {
+    color: var(--color-text);
+    text-decoration: none;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: color 0.3s;  /* Smooth color change on hover */
+}
+
+.nav-links a:hover {
+    color: var(--color-primary);
+}
+
+/* ===== HERO SECTION ===== */
+.hero {
+    display: flex;
+    flex-direction: column;   /* Stack children vertically */
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    min-height: 90vh;          /* Takes up most of the screen */
+    padding: 4rem 5%;
+    background: radial-gradient(ellipse at center, #0d1a2a 0%, var(--color-dark) 70%);
+}
+
+.hero h1 {
+    font-family: var(--font-heading);
+    font-size: clamp(2rem, 5vw, 4rem);  /* Responsive font — shrinks on mobile */
+    color: white;
+    max-width: 750px;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+}
+
+.hero p {
+    color: var(--color-text-muted);
+    font-size: 1.1rem;
+    max-width: 500px;
+    margin-bottom: 2rem;
+}
+
+/* ===== BUTTON ===== */
+.btn {
+    display: inline-block;
+    background-color: var(--color-primary);
+    color: var(--color-dark);
+    padding: 0.85rem 2rem;
+    text-decoration: none;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    font-family: var(--font-body);
+    font-size: 1rem;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn:hover {
+    background-color: var(--color-secondary);
+    transform: translateY(-2px);  /* Slight lift effect on hover */
+}
+
+/* ===== SERVICES SECTION — Uses CSS GRID ===== */
+/* Why Grid here? We need a multi-column card layout — Grid is perfect for 2D layouts */
+.services {
+    padding: 5rem 5%;
+    text-align: center;
+}
+
+.services h2 {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    color: var(--color-secondary);
+    margin-bottom: 3rem;
+}
+
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    /* auto-fit = fill the row with as many columns as fit
+       minmax(250px, 1fr) = each column min 250px, max equal share */
+    gap: 2rem;
+}
+
+.card {
+    background-color: var(--color-surface);
+    padding: 2rem;
+    border: 1px solid #1e1e2e;
+    border-top: 3px solid var(--color-primary);
+    transition: transform 0.3s, border-color 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    border-top-color: var(--color-secondary);
+}
+
+.card h3 {
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+    font-family: var(--font-heading);
+}
+
+/* ===== PAGE HERO (About, Team, Contact pages) ===== */
+.page-hero {
+    padding: 5rem 5%;
+    text-align: center;
+    border-bottom: 1px solid #1e1e2e;
+}
+
+.page-hero h1 {
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+}
+
+.page-hero p {
+    color: var(--color-text-muted);
+    font-size: 1.1rem;
+}
+
+/* ===== ABOUT PAGE ===== */
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;  /* Two equal columns */
+    gap: 4rem;
+    padding: 5rem 5%;
+    align-items: start;
+}
+
+.about-text h2 {
+    color: var(--color-secondary);
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.about-text p {
+    margin-bottom: 1rem;
+    color: var(--color-text-muted);
+}
+
+.about-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.stat {
+    background: var(--color-surface);
+    padding: 2rem;
+    border-left: 4px solid var(--color-primary);
+}
+
+.stat h3 {
+    font-size: 2.5rem;
+    color: var(--color-primary);
+    font-family: var(--font-heading);
+}
+
+/* ===== TEAM PAGE ===== */
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2rem;
+    padding: 4rem 5%;
+}
+
+.team-card {
+    background: var(--color-surface);
+    padding: 2rem;
+    text-align: center;
+    border: 1px solid #1e1e2e;
+    transition: transform 0.3s;
+}
+
+.team-card:hover {
+    transform: translateY(-5px);
+}
+
+.avatar {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: var(--color-primary);
+    color: var(--color-dark);
+    font-size: 1.4rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+}
+
+.team-card h3 {
+    color: white;
+    margin-bottom: 0.3rem;
+}
+
+.role {
+    color: var(--color-secondary);
+    font-size: 0.85rem;
+    margin-bottom: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* ===== CONTACT PAGE ===== */
+.contact-section {
+    display: grid;
+    grid-template-columns: 1fr 2fr;  /* Info takes 1 part, form takes 2 parts */
+    gap: 4rem;
+    padding: 4rem 5%;
+}
+
+.contact-info h2 {
+    color: var(--color-secondary);
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.contact-info p {
+    margin-bottom: 1rem;
+    color: var(--color-text-muted);
+    font-size: 1rem;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+    background: var(--color-surface);
+    border: 1px solid #2a2a3a;
+    padding: 1rem;
+    color: var(--color-text);
+    font-family: var(--font-body);
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: var(--color-primary);
+}
+
+/* ===== FOOTER ===== */
+footer {
+    text-align: center;
+    padding: 2rem;
+    background: var(--color-surface);
+    color: var(--color-text-muted);
+    border-top: 1px solid #1e1e2e;
+    font-size: 0.9rem;
+}
+
+/* ===== RESPONSIVE — Mobile friendly ===== */
+/* Why @media? On small screens, side-by-side layouts break. We stack them instead */
+@media (max-width: 768px) {
+    .about-content,
+    .contact-section {
+        grid-template-columns: 1fr;  /* One column on mobile */
+    }
+}
