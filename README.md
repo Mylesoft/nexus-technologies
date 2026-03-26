@@ -1,38 +1,62 @@
 # Nexus Technologies Website
 
-A professional 4-page static website for Nexus Technologies, a fictional software company.
+A professional 4-page static website for **Nexus Technologies**, 
+a fictional software company based in Nairobi, Kenya.
 
 ## 🌐 Live Site
-[View Live Site](YOUR_DEPLOYED_URL_HERE)
+[View Live Site](https://nexus-mylesof.vercel.app/)
 
 ## 📄 Pages
-- **Home** — Hero section with company tagline and services overview
-- **About** — Company story and key statistics
-- **Team** — Meet the team with profile cards
-- **Contact** — Contact form and company details
+| Page | Description |
+|------|-------------|
+| **Home** | Hero section with background image, company tagline and services |
+| **About** | Company story and key statistics |
+| **Team** | Meet the team with real profile photos |
+| **Contact** | Contact form and company details |
 
 ## 🛠️ Built With
-- HTML5 (Semantic tags)
-- CSS3 (Flexbox + CSS Grid — no frameworks)
-- Vanilla JavaScript (none needed for this project)
+- HTML5 — Semantic tags (header, nav, main, section, footer)
+- CSS3 — Flexbox + CSS Grid (no frameworks used)
+- Vanilla JavaScript — None needed for this project
 
-## 🎨 Color Palette
+## 🎨 Color Palette (Anthropic-Inspired)
 | Color | Hex | Usage |
 |-------|-----|-------|
-| Electric Cyan | `#00c8ff` | Primary accent, links |
-| Amber Gold | `#f5a623` | Highlights, hover states |
-| Deep Black | `#0a0a0f` | Background |
+| Terracotta Orange | `#d97757` | Primary accent, buttons, borders |
+| Steel Blue | `#6a9bcc` | Secondary highlights, hover states |
+| Olive Green | `#788c5d` | Team card accents |
+| Near Black | `#141413` | Background |
+| Off White | `#faf9f5` | Body text |
 
-## ✅ Project Objectives Met
-- [x] 4 web pages (Home, About, Team, Contact)
-- [x] Uses CSS Flexbox (navbar, hero, form)
-- [x] Uses CSS Grid (service cards, team grid, about layout)
-- [x] 3+ complementary colors — no CSS framework
-- [x] 10+ Git commits
-- [x] Deployed to live URL
+## 📐 Layout Techniques
+- **Flexbox** — Navbar, hero section, contact form, stats column
+- **Grid** — Service cards, team cards, about section, contact section
+- **Responsive** — Mobile breakpoints at 768px and 480px
+
+
+## 📁 Project Structure
+```
+nexus-technologies/
+├── index.html
+├── about.html
+├── team.html
+├── contact.html
+├── README.md
+├── css/
+│   └── style.css
+└── images/
+    ├── hero-bg.webp
+    ├── jonathan.jpeg
+    ├── team2.jpg
+    ├── team3.webp
+    └── team4.webp
+```
 
 ## 🚀 Deployment
-Deployed via [Vercel / Netlify / GitHub Pages]
+Deployed via **Vercel**
+👉 https://nexus-mylesof.vercel.app/
 
 ## 👤 Author
-Jonathan Ayany
+**Jonathan Ayany**
+- Email: ayany004@gmail.com
+- GitHub: [@Mylesoft](https://github.com/Mylesoft)
